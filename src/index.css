@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+@import "tailwindcss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Inter", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  /* Brand Colors */
+  --primary-color: #a855f7;
+  --secondary-color: #f97316;
+
+  /* Utility Colors */
+  --success-color: #22c55e;
+  --danger-color: #ef4444;
+  --warning-color: #facc15;
+  --info-color: #3b82f6;
+
+  /* Grayscale & Background */
+  --light-color: #f3f4f6;
+  --dark-color: #0f172a;
+  --background-color: rgba(0, 0, 0, 0.6);
+  --backdrop-blur: blur(8px);
+
+  /* Text & UI */
+  --font-color: #ffffff;
+  --border-color: #374151;
+  --link-color: var(--primary-color);
+  --link-hover-color: var(--secondary-color);
+
+  /* Effects */
+  --transition-duration: 0.3s;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color var(--transition-duration);
+}
+a:hover {
+  color: var(--link-hover-color);
+}
+button {
+  cursor: pointer;
+  transition: background-color var(--transition-duration);
+}
+button:hover {
+  background-color: var(--secondary-color);
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}

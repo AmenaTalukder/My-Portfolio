@@ -1,0 +1,435 @@
+// Variables
+:root {
+  --primary-color: #a855f7;
+  --secondary-color: #f97316;
+  --success-color: #22c55e;
+  --danger-color: #ef4444;
+  --warning-color: #facc15;
+  --info-color: #3b82f6;
+
+  --navbar-height: 4rem;
+  --navbar-padding: 1rem;
+  --border-radius: 0.5rem;
+  --border-radius-full: 9999px;
+  --transition-duration: 0.3s;
+  --transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
+
+  --background-color: #000000;
+  --background-blur: rgba(0, 0, 0, 0.8);
+  --text-color: #ffffff;
+  --text-muted: #9ca3af;
+  --border-color: #374151;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+
+  --gradient-primary: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  --gradient-secondary: linear-gradient(
+    135deg,
+    var(--secondary-color),
+    var(--primary-color)
+  );
+}
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  // Only apply transparent color if gradient clipping is supported
+  @supports (-webkit-background-clip: text) {
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  // Fallback for unsupported browsers
+  @supports not (-webkit-background-clip: text) {
+    color: var(--primary-color);
+    background: none;
+  }
+}
+
+@mixin button-hover {
+  transition: all var(--transition-duration) var(--transition-timing);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+@mixin focus-ring {
+  &:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+// Main Navbar Styles
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: var(--background-color);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+  transition: all var(--transition-duration) var(--transition-timing);
+
+  &.navbarScrolled {
+    background-color: var(--background-blur);
+    box-shadow: 0 4px 20px var(--shadow-color);
+  }
+}
+
+.navbarContainer {
+  @include flex-between;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--navbar-padding);
+  height: var(--navbar-height);
+}
+
+.navbarBrand {
+  .navbarBrandLink {
+    @include gradient-text;
+    @include focus-ring;
+    font-size: 1.875rem;
+    font-weight: 700;
+    font-family: "Poppins", "Inter", sans-serif;
+    text-decoration: none;
+    letter-spacing: -0.025em;
+    transition: all var(--transition-duration);
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.navbarMenu {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2.5rem;
+
+  @media (min-width: 768px) {
+    display: flex;
+  }
+}
+
+.navbarItem {
+  position: relative;
+}
+
+.navbarLink {
+  @include focus-ring;
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.025em;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: all var(--transition-duration) var(--transition-timing);
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gradient-primary);
+    transition: width var(--transition-duration) var(--transition-timing);
+  }
+
+  &:hover {
+    color: var(--secondary-color);
+
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+.navbarActions {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+.navbarCta {
+  @include button-hover;
+  @include focus-ring;
+  display: inline-block;
+  padding: 0.625rem 1.5rem;
+  background: var(--gradient-secondary);
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: var(--border-radius-full);
+  text-align: center;
+  letter-spacing: 0.025em;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: left 0.5s;
+  }
+
+  &:hover::before {
+    left: 100%;
+  }
+}
+
+.navbarToggle {
+  @include flex-center;
+  @include focus-ring;
+  display: block;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: var(--border-radius);
+  transition: all var(--transition-duration);
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.navbarIcon {
+  font-size: 1.75rem;
+  color: var(--text-color);
+  transition: transform var(--transition-duration);
+
+  // Gradient effect for modern browsers
+  @supports (-webkit-background-clip: text) {
+    @include gradient-text;
+  }
+
+  // Fallback for mobile/older browsers
+  @media (max-width: 767px) {
+    color: var(--secondary-color) !important;
+    background: none !important;
+    -webkit-background-clip: initial !important;
+    -webkit-text-fill-color: initial !important;
+  }
+
+  .navbarToggle:hover & {
+    transform: scale(1.1);
+    color: var(--primary-color);
+  }
+}
+
+.navbarOverlay {
+  position: fixed;
+  top: var(--navbar-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+  animation: fadeIn 0.3s ease-out;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+// Mobile Menu Styles
+.mobileMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: var(--background-color);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  transform-origin: top;
+  transition: all var(--transition-duration) var(--transition-timing);
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+
+  &.mobileMenuOpen {
+    transform: scaleY(1);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &.mobileMenuClosed {
+    transform: scaleY(0);
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.mobileMenuList {
+  list-style: none;
+  margin: 0;
+  padding: 1.5rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.mobileMenuItem {
+  margin-bottom: 0.5rem;
+
+  &:last-child {
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+  }
+}
+
+.mobileMenuLink {
+  @include focus-ring;
+  display: block;
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all var(--transition-duration);
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--gradient-primary);
+    transition: width var(--transition-duration);
+  }
+
+  &:hover {
+    color: var(--secondary-color);
+    padding-left: 1rem;
+
+    &::before {
+      width: 20px;
+    }
+  }
+}
+
+.mobileMenuCta {
+  @include button-hover;
+  @include focus-ring;
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  background: var(--gradient-secondary);
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+// Animations
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.mobileMenu.mobileMenuOpen {
+  animation: slideDown 0.3s ease-out;
+}
+
+// Accessibility & Reduced Motion
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+// Dark mode support (if implemented)
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-color: #ffffff;
+    --background-blur: rgba(255, 255, 255, 0.8);
+    --text-color: #1f2937;
+    --text-muted: #6b7280;
+    --border-color: #e5e7eb;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
+// High contrast mode
+@media (prefers-contrast: high) {
+  :root {
+    --primary-color: #0066cc;
+    --secondary-color: #ff6600;
+    --border-color: #333333;
+  }
+}

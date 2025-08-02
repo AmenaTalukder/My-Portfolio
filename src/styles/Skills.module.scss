@@ -1,0 +1,487 @@
+.skillsSection {
+  width: 100%;
+  background: #000;
+  background-image: radial-gradient(
+      circle at 25% 25%,
+      rgba(168, 85, 247, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 75% 75%,
+      rgba(249, 115, 22, 0.08) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(59, 130, 246, 0.06) 0%,
+      transparent 50%
+    );
+  padding: 6rem 2rem;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        45deg,
+        transparent 48%,
+        rgba(168, 85, 247, 0.02) 50%,
+        transparent 52%
+      ),
+      linear-gradient(
+        -45deg,
+        transparent 48%,
+        rgba(249, 115, 22, 0.02) 50%,
+        transparent 52%
+      );
+    pointer-events: none;
+  }
+}
+
+.container {
+  max-width: 75rem;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+// Header Section
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(168, 85, 247, 0.1);
+  color: #60a5fa;
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border: 1px solid rgba(96, 165, 250, 0.2);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.75rem;
+  }
+}
+
+// Services Grid
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-bottom: 6rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.serviceCard {
+  background: rgba(15, 15, 23, 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #a855f7, #f97316, #60a5fa);
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover {
+    transform: translateY(-10px);
+    border-color: rgba(168, 85, 247, 0.3);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3),
+      0 0 30px rgba(168, 85, 247, 0.15);
+
+    &::before {
+      opacity: 1;
+    }
+
+    .serviceIcon {
+      transform: scale(1.1) rotateY(180deg);
+    }
+  }
+
+  &.featured {
+    border-color: rgba(168, 85, 247, 0.4);
+    background: rgba(168, 85, 247, 0.05);
+
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+.serviceIcon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem auto;
+  font-size: 2rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+
+  span {
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  }
+}
+
+.serviceTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.serviceDescription {
+  color: #d1d5db;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.serviceLink {
+  color: #60a5fa;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  transition: all 0.3s ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #60a5fa, #a855f7);
+    transition: width 0.3s ease;
+  }
+
+  &:hover {
+    color: #a855f7;
+
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+// Specializations Section
+.specializationsSection {
+  margin-bottom: 6rem;
+}
+
+.specializationHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.specializationTitle {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.2;
+
+  @media (max-width: 768px) {
+    font-size: 1.875rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
+  }
+}
+
+.highlight {
+  background: linear-gradient(135deg, #a855f7, #f97316);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.specializationsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.specializationCard {
+  background: rgba(15, 15, 23, 0.4);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    border-color: rgba(168, 85, 247, 0.3);
+    background: rgba(168, 85, 247, 0.05);
+    box-shadow: 0 20px 40px rgba(168, 85, 247, 0.1);
+  }
+
+  &.featuredSpec {
+    background: linear-gradient(
+      135deg,
+      rgba(132, 204, 22, 0.1),
+      rgba(34, 197, 94, 0.05)
+    );
+    border-color: rgba(132, 204, 22, 0.3);
+  }
+}
+
+.specIcon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.specTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.specDescription {
+  color: #d1d5db;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.techTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.techTag {
+  background: rgba(168, 85, 247, 0.1);
+  color: #d1d5db;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(168, 85, 247, 0.2);
+    color: #ffffff;
+    transform: scale(1.05);
+  }
+}
+
+// Technical Skills
+.technicalSkills {
+  margin-bottom: 6rem;
+}
+
+.skillsTitle {
+  font-size: 2.25rem;
+  font-weight: 800;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 3rem;
+  font-family: "Poppins", sans-serif;
+
+  @media (max-width: 768px) {
+    font-size: 1.875rem;
+  }
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.skillItem {
+  background: rgba(15, 15, 23, 0.4);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: rgba(168, 85, 247, 0.3);
+    transform: translateY(-2px);
+  }
+}
+
+.skillHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.skillInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.skillIcon {
+  font-size: 1.5rem;
+}
+
+.skillName {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+}
+
+.skillPercentage {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #a855f7;
+}
+
+.skillBar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.skillProgress {
+  height: 100%;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    );
+    animation: shimmer 2s infinite;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+// Responsive Design
+@media (max-width: 1024px) {
+  .skillsSection {
+    padding: 4rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .skillsSection {
+    padding: 3rem 1rem;
+  }
+
+  .servicesGrid,
+  .specializationsGrid,
+  .projectsGrid {
+    gap: 1rem;
+  }
+
+  .serviceCard,
+  .specializationCard,
+  .skillItem {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    margin-bottom: 2rem;
+  }
+
+  .specializationsSection,
+  .technicalSkills,
+  .projectsPreview {
+    margin-bottom: 3rem;
+  }
+
+  .serviceCard {
+    padding: 1rem;
+  }
+
+  .serviceIcon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+}
