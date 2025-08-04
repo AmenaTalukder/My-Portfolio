@@ -56,9 +56,7 @@ const Contact = () => {
         },
         (error) => {
           console.error("EmailJS error:", error);
-          setTimeout(() => {
-            toast.error("Oops! Something went wrong. Please try again later.");
-          }, 3000);
+          toast.error("Oops! Something went wrong. Please try again later.");
         }
       );
   };
@@ -116,15 +114,6 @@ const Contact = () => {
           </form>
         </div>
       </motion.div>
-      <ToastContainer
-        position="top-right"
-        autoClose={3000}
-        hideProgressBar={false}
-        closeOnClick
-        pauseOnHover
-        draggable
-        theme="ligth"
-      />
     </div>
   );
 };

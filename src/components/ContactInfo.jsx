@@ -63,9 +63,6 @@ const ContactInfo = () => {
           >
             <FaTwitter />
           </a>
-          <a href="#contactForm" title="Email">
-            <FaEnvelope />
-          </a>
           <a
             href="https://wa.me/8801538331924"
             target="_blank"

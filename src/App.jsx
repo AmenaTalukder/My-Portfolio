@@ -1,5 +1,9 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import Layout from "./layout/Layout";
 import Page from "./pages/Page";
 import About from "./components/About";
@@ -14,6 +18,16 @@ import WebDevelopment from "../sub-components/services/WebDevelopment/Web";
 const App = () => {
   return (
     <BrowserRouter>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        closeOnClick
+        pauseOnHover
+        draggable
+        theme="light"
+      />
+
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Page />} />
