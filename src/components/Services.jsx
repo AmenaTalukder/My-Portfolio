@@ -8,19 +8,11 @@ const Services = () => {
 
   const services = [
     {
-      icon: "🎨",
-      title: "Web Design",
-      description:
-        "Creating visually appealing and user-friendly web interfaces with modern design principles.",
-      link: "#",
-      gradient: "linear-gradient(135deg, #667eea, #764ba2)"
-    },
-    {
       icon: "💻",
       title: "Web Development",
       description:
         "Building responsive and scalable web applications using modern technologies.",
-      link: "#",
+      link: "/development",
       gradient: "linear-gradient(135deg, #f093fb, #f5576c)",
       featured: true
     },
@@ -29,8 +21,9 @@ const Services = () => {
       title: "Frontend Development",
       description:
         "Developing interactive and high-performance user interfaces with React, Next.js, and modern web technologies.",
-      link: "#",
-      gradient: "linear-gradient(135deg, #4facfe, #00f2fe)"
+      link: "/frontend",
+      gradient: "linear-gradient(135deg, #4facfe, #00f2fe)",
+      featured: true
     }
   ];
 
@@ -100,14 +93,13 @@ const Services = () => {
             </div>
             <h3 className={styles.serviceTitle}>{service.title}</h3>
             <p className={styles.serviceDescription}>{service.description}</p>
-            <Link href={service.link} legacyBehavior>
-              <motion.a
-                className={styles.serviceLink}
+            <Link to={service.link} className={styles.serviceLink}>
+              <motion.span
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Explore Service →
-              </motion.a>
+              </motion.span>
             </Link>
           </motion.div>
         ))}

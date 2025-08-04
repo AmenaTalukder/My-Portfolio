@@ -8,6 +8,8 @@ import Skills from "./components/Skills";
 import Project from "./components/Project";
 import Contact from "./components/Contact";
 import Services from "./components/Services";
+import Frontend from "../sub-components/services/Frontent/Frontend";
+import WebDevelopment from "../sub-components/services/WebDevelopment/Web";
 
 const App = () => {
   return (
@@ -21,6 +23,10 @@ const App = () => {
           <Route path="/service" element={<Services />} />
           <Route path="/project" element={<Project />} />
           <Route path="/contact" element={<Contact />} />
+
+          {/* sub-components */}
+          <Route path="/frontend" element={<Frontend />} />
+          <Route path="/development" element={<WebDevelopment />} />
         </Route>
       </Routes>
     </BrowserRouter>

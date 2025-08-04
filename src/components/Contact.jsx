@@ -5,11 +5,15 @@ import { fadeIn } from "../motion/variants";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { useLocation } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 const Contact = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const showFormOnly = queryParams.get("form") === "true";
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -44,14 +48,17 @@ const Contact = () => {
       )
       .then(
         () => {
-          alert(
-            "Thanks for reaching out! Your message has been sent successfully."
-          );
+          toast.success("Message sent successfully");
+          setTimeout(() => {
+            navigate("/");
+          }, 3000);
           setFormData({ name: "", email: "", subject: "", message: "" });
         },
         (error) => {
           console.error("EmailJS error:", error);
-          alert("Oops! Something went wrong. Please try again later.");
+          setTimeout(() => {
+            toast.error("Oops! Something went wrong. Please try again later.");
+          }, 3000);
         }
       );
   };
@@ -66,9 +73,9 @@ const Contact = () => {
         whileInView="show"
         viewport={{ once: false, amount: 0.3 }}
       >
-        <h2>Let’s Work Together</h2>
+        <h2>Let's Work Together</h2>
         <p>
-          Have a project in mind or just want to connect? I’m open to
+          Have a project in mind or just want to connect? I'm open to
           collaborations, opportunities, or a quick chat over tech!
         </p>
         <div id="contactForm">
@@ -109,6 +116,15 @@ const Contact = () => {
           </form>
         </div>
       </motion.div>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        closeOnClick
+        pauseOnHover
+        draggable
+        theme="ligth"
+      />
     </div>
   );
 };

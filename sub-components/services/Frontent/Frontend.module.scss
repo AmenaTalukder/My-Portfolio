@@ -1,0 +1,308 @@
+// Animation keyframes
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+// Portfolio Section
+.portfolioSection {
+  min-height: 100vh;
+  width: 100%;
+  padding: 6rem 2rem;
+  background: #000;
+  position: relative;
+  overflow: hidden;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+// Background Gradients
+.backgroundGradients {
+  position: absolute;
+  inset: 0;
+  opacity: 0.6;
+
+  .gradientBlob {
+    position: absolute;
+    width: 24rem;
+    height: 24rem;
+    border-radius: 50%;
+    mix-blend-mode: multiply;
+    filter: blur(4rem);
+    animation: pulse 3s ease-in-out infinite;
+
+    &.purple {
+      top: 25%;
+      left: 25%;
+      background: #a855f7;
+      opacity: 0.2;
+    }
+
+    &.orange {
+      top: 75%;
+      right: 25%;
+      background: #f97316;
+      opacity: 0.15;
+      animation-delay: 1s;
+    }
+
+    &.blue {
+      top: 50%;
+      left: 50%;
+      background: #3b82f6;
+      opacity: 0.1;
+      transform: translate(-50%, -50%);
+      animation-delay: 2s;
+    }
+  }
+}
+
+// Grid Pattern
+.gridPattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  background-image: linear-gradient(
+      45deg,
+      transparent 48%,
+      rgba(168, 85, 247, 0.02) 50%,
+      transparent 52%
+    ),
+    linear-gradient(
+      -45deg,
+      transparent 48%,
+      rgba(249, 115, 22, 0.02) 50%,
+      transparent 52%
+    );
+}
+
+// Container
+.container {
+  position: relative;
+  z-index: 10;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+// Header
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+
+  .subtitle {
+    color: #9ca3af;
+    font-size: 1.125rem;
+    max-width: 32rem;
+    margin: 0 auto;
+  }
+}
+
+// Projects Grid
+.projectsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// Project Card
+.projectCard {
+  position: relative;
+  background: rgba(15, 15, 23, 0.6);
+  backdrop-filter: blur(4px);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: all 0.5s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 25px 50px -12px rgba(168, 85, 247, 0.2);
+    border-color: rgba(168, 85, 247, 0.5);
+  }
+
+  &.featured {
+    border-color: #fbbf24;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 215, 0, 0.1),
+      rgba(168, 85, 247, 0.1)
+    );
+  }
+
+  .featuredBadge {
+    position: absolute;
+    top: -0.5rem;
+    right: -0.5rem;
+    background: #fbbf24;
+    color: black;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+  }
+
+  .imageContainer {
+    position: relative;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    border-radius: 0.75rem;
+
+    .projectImage {
+      width: 100%;
+      height: 12rem;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .imageOverlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+  }
+
+  &:hover {
+    .projectImage {
+      transform: scale(1.1);
+    }
+
+    .imageOverlay {
+      opacity: 1;
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .projectTitle {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: white;
+      transition: color 0.3s ease;
+    }
+
+    .description {
+      color: #d1d5db;
+      font-size: 0.875rem;
+      line-height: 1.6;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .techStack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+
+      .techTag {
+        padding: 0.25rem 0.75rem;
+        background: linear-gradient(
+          to right,
+          rgba(147, 51, 234, 0.3),
+          rgba(37, 99, 235, 0.3)
+        );
+        color: white;
+        font-size: 0.75rem;
+        border-radius: 9999px;
+        border: 1px solid rgba(168, 85, 247, 0.2);
+        transition: border-color 0.3s ease;
+
+        &:hover {
+          border-color: rgba(168, 85, 247, 0.5);
+        }
+      }
+    }
+
+    .projectLink {
+      display: inline-flex;
+      align-items: center;
+      color: #60a5fa;
+      font-weight: 500;
+      font-size: 0.875rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      width: fit-content;
+
+      &:hover {
+        color: #93c5fd;
+        transform: translateX(0.25rem);
+      }
+
+      .linkIcon {
+        margin-left: 0.5rem;
+        width: 1rem;
+        height: 1rem;
+        transition: transform 0.3s ease;
+      }
+
+      &:hover .linkIcon {
+        transform: translateX(0.25rem);
+      }
+    }
+  }
+
+  &:hover .projectTitle {
+    color: #c4b5fd;
+  }
+
+  .hoverOverlay {
+    position: absolute;
+    inset: 0;
+    border-radius: 1rem;
+    background: linear-gradient(
+      135deg,
+      rgba(147, 51, 234, 0.05),
+      rgba(37, 99, 235, 0.05)
+    );
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+  }
+
+  &:hover .hoverOverlay {
+    opacity: 1;
+  }
+}
+
+// Call to Action
+.callToAction {
+  text-align: center;
+  margin-top: 4rem;
+
+  .ctaButton {
+    background: linear-gradient(to right, #9333ea, #2563eb);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+
+    &:hover {
+      background: linear-gradient(to right, #7c3aed, #1d4ed8);
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px -5px rgba(168, 85, 247, 0.25);
+    }
+  }
+}
