@@ -3,6 +3,9 @@ import styles from "../styles/Project.module.scss";
 import { motion } from "framer-motion";
 import { fadeIn } from "../motion/variants";
 import QuickCart from "../assets/QuickCart.jpg";
+import FoodDelivery from "../assets/food-delivery.jpg";
+import Travel from "../assets/Travel App.jpg";
+import Transaction from "../assets/Transaction-Dashboard.jpg";
 
 const Project = () => {
   const featuredProjects = [
@@ -69,7 +72,7 @@ const Project = () => {
       title: "Food Delivery Application",
       description:
         "A unique, responsive food delivery website UI built using React and Bootstrap. ",
-      image: "../../../src/assets/food-delivery.jpg",
+      image: FoodDelivery,
       technologies: ["JavaScript", "React", "Bootstrap"],
       link: "https://food-delivery-application-brown.vercel.app/",
       featured: true
@@ -78,7 +81,7 @@ const Project = () => {
       title: "Travel Website",
       description:
         "A modern, responsive travel website UI built using React and SCSS. ",
-      image: "../../../src/assets/Travel App.jpg",
+      image: Travel,
       technologies: ["JavaScript", "React", "SCSS"],
       link: "https://travel-app-ten-snowy.vercel.app/",
       featured: true
@@ -87,7 +90,7 @@ const Project = () => {
       title: "Transactions-Dashboard Application",
       description:
         "Transactions Management Dashboard built using React and Chakra UI.",
-      image: "../../../src/assets/Transaction-Dashboard.jpg",
+      image: Transaction,
       technologies: ["JavaScript", "React", "Emotiion-Styled", "Chakra-UI"],
       link: "https://transactions-dashboard-ivory.vercel.app/",
       featured: true

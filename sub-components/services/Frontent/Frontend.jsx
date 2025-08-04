@@ -1,5 +1,8 @@
 import React from "react";
 import styles from "./Frontend.module.scss";
+import FoodDelivery from "../../../src/assets/food-delivery.jpg";
+import Travel from "../../../src/assets/Travel App.jpg";
+import Transaction from "../../../src/assets/Transaction-Dashboard.jpg";
 
 const Frontend = () => {
   const frontendProjects = [
@@ -7,7 +10,7 @@ const Frontend = () => {
       title: "Food Delivery Application",
       description:
         "✨This application designed to provide users with a seamless experience in exploring a diverse menu of burgers. The app allows users to browse, order, and review their favorite burgers, enhancing their dining experience.",
-      image: "../../../src/assets/food-delivery.jpg",
+      image: FoodDelivery,
       technologies: ["JavaScript", "React", "Bootstrap"],
       link: "https://food-delivery-application-brown.vercel.app/",
       featured: true
@@ -16,7 +19,7 @@ const Frontend = () => {
       title: "Travel Website",
       description:
         "✨ A modern, responsive travel website UI built using React and SCSS. Includes animated components, video background home & footer, and a sleek layout design.",
-      image: "../../../src/assets/Travel App.jpg",
+      image: Travel,
       technologies: ["JavaScript", "React", "SCSS"],
       link: "https://travel-app-ten-snowy.vercel.app/",
       featured: true
@@ -25,7 +28,7 @@ const Frontend = () => {
       title: "Transactions-Dashboard Application",
       description:
         "✨This project is a Transactions Management Dashboard built using React and Chakra UI. It provides a clean and responsive interface for viewing transaction data, filtering transactions by categories (e.g., Deposit, Withdraw, Trade), and searching for specific transactions..",
-      image: "../../../src/assets/Transaction-Dashboard.jpg",
+      image: Transaction,
       technologies: ["JavaScript", "React", "Emotiion-Styled", "Chakra-UI"],
       link: "https://transactions-dashboard-ivory.vercel.app/",
       featured: true

@@ -1,4 +1,7 @@
 import styles from "../Frontent/Frontend.module.scss";
+import QuickCart from "../../../src/assets/QuickCart.jpg";
+import TravelSite from "../../../src/assets/Travel App.jpg";
+import Transaction from "../../../src/assets/Transaction-Dashboard.jpg";
 
 const Web = () => {
   const frontendProjects = [
@@ -6,7 +9,7 @@ const Web = () => {
       title: "E-Commerce Platform",
       description:
         "Full-stack MERN application with payment integration and Seller Dashboard .",
-      image: "../../../src/assets/QuickCart.jpg",
+      image: QuickCart,
       technologies: ["React", "Node.js", "MongoDB", "Clerk", "Cloudinary"],
       link: "https://quickcart-ecommerce-psi.vercel.app/",
       featured: true
@@ -15,7 +18,7 @@ const Web = () => {
       title: "Travel Website",
       description:
         "✨ A modern, responsive travel website UI built using React and SCSS. Includes animated components, video background home & footer, and a sleek layout design.",
-      image: "../../../src/assets/Travel App.jpg",
+      image: TravelSite,
       technologies: ["JavaScript", "React", "SCSS"],
       link: "https://travel-app-ten-snowy.vercel.app/",
       featured: true
@@ -24,7 +27,7 @@ const Web = () => {
       title: "Transactions-Dashboard Application",
       description:
         "✨This project is a Transactions Management Dashboard built using React and Chakra UI. It provides a clean and responsive interface for viewing transaction data, filtering transactions by categories (e.g., Deposit, Withdraw, Trade), and searching for specific transactions..",
-      image: "../../../src/assets/Transaction-Dashboard.jpg",
+      image: Transaction,
       technologies: ["JavaScript", "React", "Emotiion-Styled", "Chakra-UI"],
       link: "https://transactions-dashboard-ivory.vercel.app/",
       featured: true
