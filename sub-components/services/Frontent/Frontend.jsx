@@ -3,6 +3,7 @@ import styles from "./Frontend.module.scss";
 import FoodDelivery from "../../../src/assets/food-delivery.jpg";
 import Travel from "../../../src/assets/Travel App.jpg";
 import Transaction from "../../../src/assets/Transaction-Dashboard.jpg";
+import FreshFood from "../../../src/assets/Fresh-Food.jpg";
 
 const Frontend = () => {
   const frontendProjects = [
