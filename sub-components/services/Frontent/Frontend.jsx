@@ -32,6 +32,15 @@ const Frontend = () => {
       technologies: ["JavaScript", "React", "Emotiion-Styled", "Chakra-UI"],
       link: "https://transactions-dashboard-ivory.vercel.app/",
       featured: true
+    },
+    {
+      title: "Online Sushi Ordering Platform",
+      description:
+        "✨This project is a modern, responsive, and interactive online sushi ordering web application built with React and Tailwind CSS. It simulates a user-friendly food ordering experience, complete with a dynamic menu, detailed order modals, and responsive mobile navigation",
+      image: Transaction,
+      technologies: ["JavaScript", "React", "Tailwind", "Clerk", "Emailjs"],
+      link: "https://frontend-green-three-12.vercel.app/",
+      featured: true
     }
   ];
 
