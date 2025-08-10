@@ -13,24 +13,6 @@ const Web = () => {
       technologies: ["React", "Node.js", "MongoDB", "Clerk", "Cloudinary"],
       link: "https://quickcart-ecommerce-psi.vercel.app/",
       featured: true
-    },
-    {
-      title: "Travel Website",
-      description:
-        "✨ A modern, responsive travel website UI built using React and SCSS. Includes animated components, video background home & footer, and a sleek layout design.",
-      image: TravelSite,
-      technologies: ["JavaScript", "React", "SCSS"],
-      link: "https://travel-app-ten-snowy.vercel.app/",
-      featured: true
-    },
-    {
-      title: "Transactions-Dashboard Application",
-      description:
-        "✨This project is a Transactions Management Dashboard built using React and Chakra UI. It provides a clean and responsive interface for viewing transaction data, filtering transactions by categories (e.g., Deposit, Withdraw, Trade), and searching for specific transactions..",
-      image: Transaction,
-      technologies: ["JavaScript", "React", "Emotiion-Styled", "Chakra-UI"],
-      link: "https://transactions-dashboard-ivory.vercel.app/",
-      featured: true
     }
   ];
 

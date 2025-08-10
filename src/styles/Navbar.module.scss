@@ -226,7 +226,7 @@
 .navbarToggle {
   @include flex-center;
   @include focus-ring;
-  display: block;
+  display: flex Iimportant;
   background: none;
   border: none;
   cursor: pointer;
@@ -285,14 +285,15 @@
 
 // Mobile Menu Styles
 .mobileMenu {
-  position: absolute;
-  top: 100%;
+  position: fixed;
+  top: var(--navbar-height);
   left: 0;
   right: 0;
   background-color: var(--background-color);
   border-bottom: 1px solid var(--border-color);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
   transform-origin: top;
+  z-index: 1001;
   transition: all var(--transition-duration) var(--transition-timing);
 
   @media (min-width: 768px) {

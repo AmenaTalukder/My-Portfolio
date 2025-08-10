@@ -6,6 +6,7 @@ import QuickCart from "../assets/QuickCart.jpg";
 import FoodDelivery from "../assets/food-delivery.jpg";
 import Travel from "../assets/Travel App.jpg";
 import Transaction from "../assets/Transaction-Dashboard.jpg";
+import FreshFood from "../assets/Fresh-Food.jpg";
 
 const Project = () => {
   const featuredProjects = [
@@ -93,6 +94,15 @@ const Project = () => {
       image: Transaction,
       technologies: ["JavaScript", "React", "Emotiion-Styled", "Chakra-UI"],
       link: "https://transactions-dashboard-ivory.vercel.app/",
+      featured: true
+    },
+    {
+      title: "Online Sushi Ordering Platform",
+      description:
+        "✨This project is a modern, responsive, and interactive online sushi ordering web application built with React and Tailwind CSS. It simulates a user-friendly food ordering experience, complete with a dynamic menu, detailed order modals, and responsive mobile navigation",
+      image: FreshFood,
+      technologies: ["JavaScript", "React", "Tailwind", "Clerk", "Emailjs"],
+      link: "https://frontend-green-three-12.vercel.app/",
       featured: true
     }
   ];
