@@ -4,6 +4,7 @@ import FoodDelivery from "../../../src/assets/food-delivery.jpg";
 import Travel from "../../../src/assets/Travel App.jpg";
 import Transaction from "../../../src/assets/Transaction-Dashboard.jpg";
 import FreshFood from "../../../src/assets/Fresh-Food.jpg";
+import LearnFlow from "../../../src/assets/learnFlow.jpg";
 
 const Frontend = () => {
   const frontendProjects = [
@@ -41,6 +42,15 @@ const Frontend = () => {
       image: FreshFood,
       technologies: ["JavaScript", "React", "Tailwind", "Clerk", "Emailjs"],
       link: "https://frontend-green-three-12.vercel.app/",
+      featured: true
+    },
+    {
+      title: "Online Education Site",
+      description:
+        "✨LearnFlow – Online Education Platform (Frontend) LearnFlow is a modern, responsive, and fully functional frontend interface for an online education platform. Designed with user experience in mind, LearnFlow helps students discover courses, connect with mentors, and explore blog content—all in one seamless interface.",
+      image: LearnFlow,
+      technologies: ["JavaScript", "React", "Tailwind", "css"],
+      link: "https://online-education-nine-tau.vercel.app/",
       featured: true
     }
   ];
