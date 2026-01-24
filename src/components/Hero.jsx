@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 export default function Hero() {
   const titles = [
     {
-      text: "Full Stack Developer (MERN)"
+      text: "MERN Stack Developer "
     },
     {
       text: "Frontend Developer"
@@ -147,7 +147,7 @@ export default function Hero() {
 
               <div className={styles.buttons}>
                 <motion.a
-                  href="https://drive.google.com/file/d/1M2HRzPAdkEk-O3_qrJmqcxrYpFOnWi1Y/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1H-DkXn16oqt0DMqxJXHbP27t3t4IQHoK/view?usp=sharing"
                   download
                   className={styles.downloadButton}
                   whileHover={{
