@@ -264,6 +264,19 @@
     color: #c4b5fd;
   }
 
+  .projectTitle {
+  font-size: 32px;
+
+  @supports (-webkit-background-clip: text) {
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  & {
+    margin-top: 20px;
+  }
+}
+
   .hoverOverlay {
     position: absolute;
     inset: 0;
