@@ -8,7 +8,7 @@ import Travel from "../assets/Travel App.jpg";
 import Transaction from "../assets/Transaction-Dashboard.jpg";
 import FreshFood from "../assets/Fresh-Food.jpg";
 import LearnFlow from "../assets/learnFlow.jpg";
-import HotelManagement from "../assets/HotelManagement.png"
+import HotelManagement from "../assets/hotelManagment.jpg"
 
 const Project = () => {
   const featuredProjects = [
