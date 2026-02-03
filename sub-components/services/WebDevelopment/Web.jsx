@@ -4,7 +4,7 @@ import TravelSite from "../../../src/assets/Travel App.jpg";
 import Transaction from "../../../src/assets/Transaction-Dashboard.jpg";
 
 const Web = () => {
-  const frontendProjects = [
+  const MernProjects = [
     
   ];
 
