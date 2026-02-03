@@ -65,15 +65,7 @@ const Frontend = () => {
       link: "https://online-education-nine-tau.vercel.app/",
       featured: true
     },
-    // {
-    //   title: "E-Commerce Platform",
-    //   description:
-    //     "E-commerce application with payment integration and Seller Dashboard.",
-    //   image: QuickCart,
-    //   technologies: ["React", "Node.js", "MongoDB", "Clerk", "Cloudinary"],
-    //   link: "https://quickcart-ecommerce-psi.vercel.app/",
-    //   featured: true
-    // }
+  
   ];
 
   return (
