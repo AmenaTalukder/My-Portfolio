@@ -5,6 +5,7 @@ import Travel from "../../../src/assets/Travel App.jpg";
 import Transaction from "../../../src/assets/Transaction-Dashboard.jpg";
 import FreshFood from "../../../src/assets/Fresh-Food.jpg";
 import LearnFlow from "../../../src/assets/learnFlow.jpg";
+import HotelManagement from "../../../src/assets/HotelManagement.png"
 
 const Frontend = () => {
   const frontendProjects = [
