@@ -5,15 +5,7 @@ import Transaction from "../../../src/assets/Transaction-Dashboard.jpg";
 
 const Web = () => {
   const frontendProjects = [
-    // {
-    //   title: "E-Commerce Platform",
-    //   description:
-    //     "Full-stack MERN application with payment integration and Seller Dashboard .",
-    //   image: QuickCart,
-    //   technologies: ["React", "Node.js", "MongoDB", "Clerk", "Cloudinary"],
-    //   link: "https://quickcart-ecommerce-psi.vercel.app/",
-    //   featured: true
-    // }
+    
   ];
 
   return (
