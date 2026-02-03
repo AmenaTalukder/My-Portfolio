@@ -11,64 +11,16 @@ import LearnFlow from "../assets/learnFlow.jpg";
 
 const Project = () => {
   const featuredProjects = [
-    // {
-    //   title: "E-Commerce Platform",
-    //   description:
-    //     "Full-stack MERN application with payment integration and admin dashboard.",
-    //   image: "/api/placeholder/300/200",
-    //   technologies: ["React", "Node.js", "MongoDB"],
-    //   link: "#",
-    //   featured: true
-    // },
-    // {
-    //   title: "Task Management App",
-    //   description:
-    //     "Real-time collaborative task manager with drag-and-drop functionality.",
-    //   image: "/api/placeholder/300/200",
-    //   technologies: ["React", "Firebase", "Material-UI", "Socket.io"],
-    //   link: "#",
-    //   featured: true
-    // },
-    // {
-    //   title: "Portfolio Website",
-    //   description: "Personal portfolio built with React and GSAP animations.",
-    //   image: "/api/placeholder/300/200",
-    //   technologies: ["React", "SCSS", "GSAP"],
-    //   link: "#",
-    //   featured: true
-    // },
-    // {
-    //   title: "Blog Platform",
-    //   description: "Full-stack blogging platform with Markdown support.",
-    //   image: "/api/placeholder/300/200",
-    //   technologies: ["Next.js", "MongoDB", "Tailwind CSS"],
-    //   link: "#",
-    //   featured: true
-    // },
-    // {
-    //   title: "Social Media App",
-    //   description: "A real-time social media application with live chat.",
-    //   image: "/api/placeholder/300/200",
-    //   technologies: ["React Native", "Firebase", "Redux"],
-    //   link: "#",
-    //   featured: true
-    // },
-    // {
-    //   title: "Weather Dashboard",
-    //   description: "Interactive weather dashboard using OpenWeather API.",
-    //   image: "/api/placeholder/300/200",
-    //   technologies: ["HTML", "CSS", "JavaScript", "API"],
-    //   link: "#",
-    //   featured: true
-    // },
     {
-      title: "E-Commerce Platform",
-      description:
-        "Full-stack MERN application with payment integration and Seller Dashboard .",
-      image: QuickCart,
-      technologies: ["React", "Node.js", "MongoDB", "Clerk", "Cloudinary"],
-      link: "https://quickcart-ecommerce-psi.vercel.app/",
+        title: "Hotel Management System",
+        description:
+        "✨A full-featured hotel management system built with React and Vite, focused on delivering a smooth and user-friendly booking experience. Users can browse rooms, explore exclusive offers, and interact with a clean, responsive UI optimized for all devices.",
+      image: HotelManagement,
+      technologies: ["React", "Vite", "JavaScript", "Tailwind CSS"],
+      link: "https://hotel-management-six-taupe.vercel.app/",
       featured: true
+
+
     },
     {
       title: "Food Delivery Application",
