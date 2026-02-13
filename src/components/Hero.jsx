@@ -147,7 +147,7 @@ export default function Hero() {
 
               <div className={styles.buttons}>
                 <motion.a
-                  href="https://drive.google.com/file/d/1H-DkXn16oqt0DMqxJXHbP27t3t4IQHoK/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1n5Pez2ULYjLidZeLOfmmygs2JCGa_ADj/view?usp=sharing"
                   download
                   className={styles.downloadButton}
                   whileHover={{

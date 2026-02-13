@@ -18,7 +18,7 @@ const Project = () => {
         "✨A full-featured hotel management system built with React and Vite, focused on delivering a smooth and user-friendly booking experience. Users can browse rooms, explore exclusive offers, and interact with a clean, responsive UI optimized for all devices.",
       image: HotelManagement,
       technologies: ["React", "Vite", "JavaScript", "Tailwind CSS"],
-      link: "https://hotel-management-joe4kelbk-amenatalukders-projects.vercel.app/",
+      link: "https://hotel-management-six-taupe.vercel.app/",
       featured: true
 
 
